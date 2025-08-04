@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern AI Email Generator Design System - Car-inspired with electric blue accents */
+
+@layer base {
+  :root {
+    /* Background & Surface Colors - Slightly Dark Theme */
+    --background: 220 15% 12%;
+    --surface: 220 15% 14%;
+    --card: 220 15% 16%;
+    
+    /* Text Colors */
+    --foreground: 210 40% 95%;
+    --card-foreground: 210 40% 95%;
+    --popover-foreground: 210 40% 95%;
+    
+    /* Brand Colors - Vibrant Rainbow Theme */
+    --primary: 199 89% 48%;
+    --primary-glow: 199 89% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-vibrant: 280 100% 70%;
+    --primary-electric: 180 100% 50%;
+    
+    /* Accent Colors - Multi-colored */
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 210 40% 95%;
+    --accent: 280 100% 70%;
+    --accent-foreground: 0 0% 100%;
+    --accent-orange: 30 100% 60%;
+    --accent-green: 142 76% 50%;
+    --accent-purple: 280 100% 70%;
+    --accent-pink: 320 100% 70%;
+    
+    /* Utility Colors */
+    --muted: 220 15% 18%;
+    --muted-foreground: 215 20% 70%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    
+    /* Interactive Elements */
+    --border: 220 15% 25%;
+    --input: 220 15% 18%;
+    --ring: 199 89% 48%;
+    --popover: 220 15% 16%;
+    
+    /* Vibrant Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(199 89% 48%), hsl(280 100% 70%));
+    --gradient-rainbow: linear-gradient(135deg, hsl(199 89% 48%), hsl(280 100% 70%), hsl(30 100% 60%), hsl(142 76% 50%));
+    --gradient-surface: linear-gradient(135deg, hsl(220 15% 12%), hsl(220 15% 16%));
+    --gradient-card: linear-gradient(135deg, hsl(220 15% 16%), hsl(220 15% 20%));
+    --gradient-glow: linear-gradient(135deg, hsl(199 89% 48% / 0.3), hsl(280 100% 70% / 0.3));
+    
+    /* Shadows & Effects */
+    --shadow-glow: 0 0 40px hsl(199 89% 48% / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(220 15% 2% / 0.5);
+    --shadow-elevation: 0 20px 40px -15px hsl(220 15% 2% / 0.7);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-medium;
+    background: var(--gradient-surface);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Car Logo Animation - Enhanced */
+  .car-logo {
+    @apply relative inline-block cursor-pointer;
+    animation: car-drive 3s ease-in-out infinite;
+    transition: var(--transition-smooth);
+  }
+  
+  .car-logo:hover {
+    animation: car-drive 1s ease-in-out infinite, rainbow-glow 2s linear infinite;
+  }
+  
+  .car-logo::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-full h-0.5 rounded-full;
+    background: var(--gradient-rainbow);
+    animation: road-lines 1.5s linear infinite;
+  }
+  
+  .car-logo::before {
+    content: '';
+    @apply absolute -inset-2 rounded-full opacity-0 transition-opacity duration-300;
+    background: var(--gradient-glow);
+    z-index: -1;
+  }
+  
+  .car-logo:hover::before {
+    @apply opacity-100;
+    animation: pulse-glow 1s ease-in-out infinite;
+  }
+  
+  /* Interactive Buttons - More Colorful */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold;
+    @apply hover:shadow-[0_0_30px_theme(colors.primary/60)] transition-all duration-300;
+    @apply hover:scale-105 active:scale-95;
+    background: var(--gradient-rainbow);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: var(--gradient-glow);
+    animation: rainbow-glow 3s linear infinite;
+  }
+  
+  .btn-primary:hover::before {
+    @apply opacity-30;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-semibold;
+    @apply border border-border hover:border-primary/50 transition-all duration-300;
+    @apply hover:bg-secondary/80 hover:scale-105 active:scale-95;
+  }
+  
+  /* Animated Cards */
+  .glass-card {
+    @apply backdrop-blur-sm border border-border/50 rounded-xl p-6;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevation);
+    border-color: hsl(var(--primary) / 0.3);
+  }
+  
+  /* Glowing Text Area */
+  .glow-input {
+    @apply bg-input border border-border rounded-lg px-4 py-3 text-foreground;
+    @apply focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300;
+    @apply placeholder:text-muted-foreground resize-none;
+  }
+  
+  .glow-input:focus {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+  }
+  
+  /* Pulse Animation for Status */
+  .status-indicator {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  /* Floating Animation */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+}
