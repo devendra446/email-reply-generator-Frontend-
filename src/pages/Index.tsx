@@ -22,7 +22,7 @@ const Index = () => {
       await new Promise(resolve => setTimeout(resolve, 1500));
 
       // Make API call to backend
-      const response = await axios.post('http://localhost:8080/api/email/generate', {
+      const response = await axios.post('https://email-reply-generator-backend-production-48ff.up.railway.app/api/email/generate', {
         emailContent,
         tone,
       });
